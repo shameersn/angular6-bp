@@ -10,6 +10,8 @@ import {
   AuthService,
   ErrorsHandler
 } from './services';
+import { AuthGuard } from './guards';
+
 import { NetworkDetectionModule } from './components/network-detection/network-detection.module';
 
 @NgModule({
@@ -26,7 +28,8 @@ import { NetworkDetectionModule } from './components/network-detection/network-d
       useClass: ErrorsHandler,
     },
     AuthService,
-    ApiService
+    ApiService,
+    AuthGuard
   ],
   exports: [
     NetworkDetectionModule
